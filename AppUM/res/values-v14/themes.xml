@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <style name="CustomTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    
+<!--     <item name="android:textAppearance">@style/CustomTheme.TextAppearance</item> -->
+<!--     <item name="android:textAppearanceSmall">@style/CustomTheme.TextAppearance.Small</item> -->
+<!--     <item name="android:textAppearanceMedium">@style/CustomTheme.TextAppearance.Medium</item> -->
+<!--     <item name="android:textAppearanceLarge">@style/CustomTheme.TextAppearance.Large</item> -->
+  
+    </style>
+  
+    <!-- Text styles -->
+<!--     <style name="CustomTheme.TextAppearance" parent="@android:style/TextAppearance"> -->
+<style name="CustomTheme.TextAppearance">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    
+    <style name="CustomTheme.Background" >
+        <item name="android:background">@color/white</item>
+    </style>
+    
+    <style name="CustomTheme.TextAppearance.BackgroundBtn"  >        
+<!--         parent ="@android:style/TextAppearance"> -->
+        <item name="android:background">@color/blue</item>
+    </style>
+</resources>

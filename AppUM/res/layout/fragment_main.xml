@@ -1,0 +1,66 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout01"
+    style="@style/CustomTheme.Background"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:background="@color/white">
+    
+   <!-- android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.appum.MainActivity$PlaceholderFragment" -->
+    
+    <!-- style="@style/CustomTheme.TextAppearance.BackgroundBtn" en edit text -->
+    
+        <!-- requestFocus
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" -->
+
+    <Button
+        android:id="@+id/btnMostrarNotificacion"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="onClickNotification"
+        android:text="@string/notificacion" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="57dp"
+        android:text="@string/aceptar" 
+        android:onClick="login"/>
+
+    <EditText
+        android:id="@+id/txtPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtUser"
+        android:layout_below="@+id/btnMostrarNotificacion"
+        android:layout_marginTop="92dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:singleLine="true" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/txtUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnMostrarNotificacion"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="33dp"
+        android:ems="10"
+        android:hint="@string/usuario" />
+
+</RelativeLayout>
