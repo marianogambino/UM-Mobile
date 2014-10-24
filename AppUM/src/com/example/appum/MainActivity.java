@@ -15,21 +15,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+
 import com.example.appum.NotificationActivity;;
 
 public class MainActivity extends ActionBarActivity {
-	 int notificationID = 1;
-	 private EditText  editUser=null;
-	 private EditText  editPass=null;
-	 private Button btnLogin;
+	
+	public static final String EXTRA_MESSAGE = "hola";
+	int notificationID = 1;
+	 
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		editUser = (EditText)findViewById(R.id.txtUser);
-	    editPass= (EditText)findViewById(R.id.txtPass);
-	    btnLogin = (Button)findViewById(R.id.btnLogin);
 		if (savedInstanceState == null) {
 			getSupportFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
@@ -49,14 +47,14 @@ public class MainActivity extends ActionBarActivity {
 	
 	 public void login(View view) {
 	        // Do something in response to button
-		 if(editUser.getText().toString() == "admin" && editPass.getText().toString() == "admin")
-		 { 
+		// if(editUser.getText().toString() == "admin" && editPass.getText().toString() == "admin")
+		// { 
 	    	Intent intent = new Intent(this,WelcomeActivity.class);
-	    	//EditText editText = (EditText) findViewById(R.id.edit_message);
-	    	//String message = editText.getText().toString();
-	    	//intent.putExtra(EXTRA_MESSAGE, message);
+	    	EditText editText = (EditText) findViewById(R.id.txtUser);
+	    	String message = editText.getText().toString();
+	    	intent.putExtra(EXTRA_MESSAGE, message);
 	    	startActivity(intent);
-	    }
+	    //}
 	 }
 				
 		

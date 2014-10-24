@@ -39,7 +39,7 @@
         android:text="@string/aceptar" 
         android:onClick="login"/>
 
-    <EditText
+   <!--   <EditText
         android:id="@+id/txtPass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -48,10 +48,10 @@
         android:layout_marginTop="92dp"
         android:ems="10"
         android:inputType="textPassword"
-        android:singleLine="true" >
+        android:singleLine="true" > 
 
         <requestFocus />
-    </EditText>
+    </EditText> -->
 
     <EditText
         android:id="@+id/txtUser"
