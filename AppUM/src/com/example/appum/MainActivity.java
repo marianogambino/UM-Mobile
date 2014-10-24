@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import com.example.appum.NotificationActivity;;
 
 public class MainActivity extends ActionBarActivity {
 	 int notificationID = 1;
@@ -36,7 +37,7 @@ public class MainActivity extends ActionBarActivity {
 		
 	}
 	
-	public void login(View v){
+	/*public void login(View v){
 			
 		if(editUser.getText().toString().equals("admin") && 
 			     editPass.getText().toString().equals("admin"))
@@ -44,11 +45,20 @@ public class MainActivity extends ActionBarActivity {
 					Intent intent = new Intent(MainActivity.this, WelcomeActivity.class);
 				    startActivity(intent);
 			}
-		}
-				
-		
+		}*/
 	
-			
+	 public void login(View view) {
+	        // Do something in response to button
+		 if(editUser.getText().toString() == "admin" && editPass.getText().toString() == "admin")
+		 { 
+	    	Intent intent = new Intent(this,WelcomeActivity.class);
+	    	//EditText editText = (EditText) findViewById(R.id.edit_message);
+	    	//String message = editText.getText().toString();
+	    	//intent.putExtra(EXTRA_MESSAGE, message);
+	    	startActivity(intent);
+	    }
+	 }
+				
 		
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
