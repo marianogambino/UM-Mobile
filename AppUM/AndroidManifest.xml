@@ -30,10 +30,16 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.appum.MainActivity" />
         </activity>
+        
         <activity
             android:name="com.example.appum.WelcomeActivity"
-            android:label="@string/title_activity_welcome" >
+            android:label="@string/title_activity_welcome"
+            android:parentActivityName="com.example.appum.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.appum.MainActivity" />
         </activity>
+        
     </application>
 
 </manifest>

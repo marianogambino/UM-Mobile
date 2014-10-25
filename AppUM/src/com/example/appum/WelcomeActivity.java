@@ -20,7 +20,7 @@ public class WelcomeActivity extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_welcome);
 
-		if (savedInstanceState == null) {
+		/*if (savedInstanceState == null) {
 			getSupportFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
 		}
@@ -34,6 +34,7 @@ public class WelcomeActivity extends ActionBarActivity {
 
 	    // Set the text view as the activity layout
 	    setContentView(textView);
+	    */
 	}
 
 	
