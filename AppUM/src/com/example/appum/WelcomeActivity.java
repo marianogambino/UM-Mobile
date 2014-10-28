@@ -16,18 +16,12 @@ public class WelcomeActivity extends ActionBarActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
-		//setContentView(R.layout.activity_welcome);
 
-//		if (savedInstanceState == null) {
-//			getSupportFragmentManager().beginTransaction()
-//					.add(R.id.container, new PlaceholderFragment()).commit();
-//		}
 		Intent intent = getIntent();
 		String mensaje = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
 		
 		// Create the text view
-	   TextView textView = new TextView(this); //(TextView) findViewById(R.id.mensajeBienvenida);
+	   TextView textView = new TextView(this);
 	   textView.setTextSize(40);
 	   textView.setText(mensaje);
 
