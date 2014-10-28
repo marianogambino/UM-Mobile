@@ -20,7 +20,7 @@ import com.example.appum.NotificationActivity;;
 
 public class MainActivity extends ActionBarActivity {
 	
-	public static final String EXTRA_MESSAGE = "hola";
+	public static final String EXTRA_MESSAGE = "mensajeBienvenida";
 	int notificationID = 1;
 	 
 
