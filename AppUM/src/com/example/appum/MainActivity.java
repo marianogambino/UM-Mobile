@@ -13,12 +13,18 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+import android.widget.ImageButton;
+import android.view.View.OnClickListener;
+import com.example.appum.NotificationActivity;;
 
 public class MainActivity extends ActionBarActivity {
 	
 	public static final String EXTRA_MESSAGE = "mensajeBienvenida";
 	int notificationID = 1;
+	//ImageButton imgBotonOk;
 	 
 
 	@Override
@@ -29,9 +35,18 @@ public class MainActivity extends ActionBarActivity {
 			getSupportFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
 		}
-		
 	}
 	
+/*	public void addButtonListener() {
+        imgBotonOk= (ImageButton) findViewById(R.id.btnOk);
+        imgBotonOk.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               Toast.makeText(MainActivity.this,"anda!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+	}*/
 	/*public void login(View v){
 			
 		if(editUser.getText().toString().equals("admin") && 
@@ -43,14 +58,18 @@ public class MainActivity extends ActionBarActivity {
 		}*/
 	
 	 public void login(View view) {
-	        // Do something in response to button
+
 		// if(editUser.getText().toString() == "admin" && editPass.getText().toString() == "admin")
 		// { 
 	    	Intent intent = new Intent(this,WelcomeActivity.class);
 	    	EditText editText = (EditText) findViewById(R.id.txtUser);
 	    	String message = editText.getText().toString();
-	    	intent.putExtra(EXTRA_MESSAGE, message);
-	    	startActivity(intent);
+	    	if (message.equals("admin")){
+	    		intent.putExtra(EXTRA_MESSAGE, message);
+		    	startActivity(intent);
+	    	}
+	    	else
+	    		Toast.makeText(MainActivity.this,"error en usuario!", Toast.LENGTH_SHORT).show();
 	    //}
 	 }
 				

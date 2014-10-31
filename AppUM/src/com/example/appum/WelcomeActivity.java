@@ -9,9 +9,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class WelcomeActivity extends ActionBarActivity {
@@ -20,17 +17,22 @@ public class WelcomeActivity extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		setContentView( R.layout.activity_welcome );
+		Intent intent = getIntent();
+		String mensaje = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
 		
-		if (savedInstanceState == null) {
-	        getSupportFragmentManager().beginTransaction()
-	                .add( R.id.container , new PlaceholderFragment() )
-	                .commit();
-	    }
-		
+		// Create the text view
+	   TextView textView = new TextView(this);
+	   textView.setTextSize(40);
+	   textView.setText(mensaje);
+
+	    // Set the text view as the activity layout
+	   setContentView(textView);
 	   
 	}
 
+	
+	
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 
@@ -62,26 +64,9 @@ public class WelcomeActivity extends ActionBarActivity {
 		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,
 				Bundle savedInstanceState) {
-//			View rootView = inflater.inflate(R.layout.fragment_welcome,
-//					container, false);
-			
-			RelativeLayout fl = (RelativeLayout ) inflater.inflate(R.layout.fragment_welcome,
-						container, false);
-			 
-			Intent intent = getActivity().getIntent();
-			String mensaje = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
-			
-			
-			TextView textView2 = (TextView) fl.findViewById( R.id.textView2 );
-			textView2.setTextSize(40);
-			textView2.setText("HOLA");
-			
-			// Create the text view
-		   TextView textView = (TextView) fl.findViewById( R.id.mensajeBienvenida );
-		   textView.setTextSize(30);
-		   textView.setText(mensaje);
-			
-			return fl;
+			View rootView = inflater.inflate(R.layout.fragment_welcome,
+					container, false);
+			return rootView;
 		}
 	}
 

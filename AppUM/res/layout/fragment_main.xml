@@ -29,15 +29,17 @@
         android:onClick="onClickNotification"
         android:text="@string/notificacion" />
 
-    <Button
+  <!--   <Button
         android:id="@+id/btnLogin"
+        style="@style/CustomTheme.TextAppearance.BackgroundBtn"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="57dp"
-        android:text="@string/aceptar" 
-        android:onClick="login"/>
+        android:onClick="login"
+        android:text="@string/aceptar"
+        android:textColorLink="@color/blue" />  -->
 
    <!--   <EditText
         android:id="@+id/txtPass"
@@ -62,5 +64,31 @@
         android:layout_marginTop="33dp"
         android:ems="10"
         android:hint="@string/usuario" />
+
+    <ImageButton
+        android:id="@+id/btnCancel"
+        style="@drawable/ic_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/btnMostrarNotificacion"
+        android:layout_marginBottom="132dp"
+        android:layout_marginRight="36dp"
+        android:background="@drawable/ic_close"
+        android:contentDescription="@string/cancel"
+        android:src="@drawable/ic_close" />
+
+    <ImageButton
+        android:id="@+id/btnOk"
+        style="@drawable/ic_ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnMostrarNotificacion"
+        android:layout_alignTop="@+id/btnCancel"
+        android:layout_marginLeft="39dp"
+        android:background="@drawable/ic_ok"
+        android:contentDescription="@string/ok"
+        android:src="@drawable/ic_ok" 
+        android:onClick="login"/>
 
 </RelativeLayout>
