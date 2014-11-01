@@ -121,7 +121,7 @@ public class MainActivity extends ActionBarActivity {
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, i, 0);
         NotificationManager nm = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
          
-        CharSequence ticker ="Aviso";
+        CharSequence ticker ="Aviso!";
         CharSequence contentTitle = "Aviso Materias";
         CharSequence contentText = "Te toca cursar Calculo I";
         Notification noti = new NotificationCompat.Builder(this)
