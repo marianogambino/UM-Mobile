@@ -13,18 +13,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
-import android.widget.ImageButton;
-import android.view.View.OnClickListener;
-import com.example.appum.NotificationActivity;;
+
+import com.example.asyncTask.unimoron.AsyncTaskLogin;
 
 public class MainActivity extends ActionBarActivity {
 	
 	public static final String EXTRA_MESSAGE = "mensajeBienvenida";
 	int notificationID = 1;
-	//ImageButton imgBotonOk;
 	 
 
 	@Override
@@ -35,18 +31,9 @@ public class MainActivity extends ActionBarActivity {
 			getSupportFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
 		}
+		
 	}
 	
-/*	public void addButtonListener() {
-        imgBotonOk= (ImageButton) findViewById(R.id.btnOk);
-        imgBotonOk.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-               Toast.makeText(MainActivity.this,"anda!", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-	}*/
 	/*public void login(View v){
 			
 		if(editUser.getText().toString().equals("admin") && 
@@ -58,19 +45,17 @@ public class MainActivity extends ActionBarActivity {
 		}*/
 	
 	 public void login(View view) {
-
-		// if(editUser.getText().toString() == "admin" && editPass.getText().toString() == "admin")
-		// { 
-	    	Intent intent = new Intent(this,WelcomeActivity.class);
-	    	EditText editText = (EditText) findViewById(R.id.txtUser);
-	    	String message = editText.getText().toString();
-	    	if (message.equals("admin")){
-	    		intent.putExtra(EXTRA_MESSAGE, message);
-		    	startActivity(intent);
-	    	}
-	    	else
-	    		Toast.makeText(MainActivity.this,"error en usuario!", Toast.LENGTH_SHORT).show();
-	    //}
+	        // Do something in response to button
+		EditText editUser = (EditText) findViewById( R.id.txtUser );
+		EditText editPass = (EditText) findViewById( R.id.txtPass );
+		String user = editUser.getText().toString();
+	    String password = editPass.getText().toString();	
+		String[] param = new String[2];	
+	    param[0] = user;
+	    param[1] = password; // en un futuro debe viajar al servicio encriptada (tip seguridad)
+	    AsyncTaskLogin login = new AsyncTaskLogin( MainActivity.this );
+	    login.execute(param);
+	   
 	 }
 				
 		
@@ -110,6 +95,7 @@ public class MainActivity extends ActionBarActivity {
 			return rootView;
 		}
 	}
+	
 	public void onClickNotification(View v){
         displayNotification();
     }
@@ -121,7 +107,7 @@ public class MainActivity extends ActionBarActivity {
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, i, 0);
         NotificationManager nm = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
          
-        CharSequence ticker ="Aviso!";
+        CharSequence ticker ="Aviso";
         CharSequence contentTitle = "Aviso Materias";
         CharSequence contentText = "Te toca cursar Calculo I";
         Notification noti = new NotificationCompat.Builder(this)
@@ -136,6 +122,6 @@ public class MainActivity extends ActionBarActivity {
         nm.notify(notificationID, noti);
     }
     
-    
+      
 }	
 	

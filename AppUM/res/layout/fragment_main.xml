@@ -65,30 +65,54 @@
         android:ems="10"
         android:hint="@string/usuario" />
 
-    <ImageButton
-        android:id="@+id/btnCancel"
-        style="@drawable/ic_close"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/btnMostrarNotificacion"
-        android:layout_marginBottom="132dp"
-        android:layout_marginRight="36dp"
-        android:background="@drawable/ic_close"
-        android:contentDescription="@string/cancel"
-        android:src="@drawable/ic_close" />
-
-    <ImageButton
+    <!-- <ImageButton
         android:id="@+id/btnOk"
         style="@drawable/ic_ok"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/btnMostrarNotificacion"
-        android:layout_alignTop="@+id/btnCancel"
-        android:layout_marginLeft="39dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="46dp"
+        android:layout_marginLeft="38dp"
         android:background="@drawable/ic_ok"
         android:contentDescription="@string/ok"
         android:src="@drawable/ic_ok" 
+        android:onClick="login"/>
+
+    <ImageButton
+        android:id="@+id/btnCancel"
+        style="@drawable/ic_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/btnMostrarNotificacion"
+        android:layout_alignTop="@+id/btnOk"
+        android:layout_marginRight="33dp"
+        android:background="@drawable/ic_close"
+        android:contentDescription="@string/cancel"
+        android:src="@drawable/ic_close" /> -->
+
+  
+
+    <EditText
+        android:id="@+id/txtPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtUser"
+        android:layout_below="@+id/txtUser"
+        android:layout_marginTop="21dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:hint="@string/password"
+        android:singleLine="true" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="19dp"
+        android:text="@string/aceptar" 
         android:onClick="login"/>
 
 </RelativeLayout>

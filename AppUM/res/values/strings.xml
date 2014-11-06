@@ -11,5 +11,6 @@
     <string name="title_activity_welcome">Bienvenido</string>
     <string name="ok">Aceptar</string>
     <string name="cancel">Cancelar</string>
+    <string name="password">Password</string>
 
 </resources>
