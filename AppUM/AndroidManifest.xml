@@ -29,8 +29,7 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.appum.MainActivity" />
-        </activity>
-        
+        </activity>        
         <activity
             android:name="com.example.appum.WelcomeActivity"
             android:label="@string/title_activity_welcome"
@@ -41,5 +40,6 @@
         </activity>
         
     </application>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
 </manifest>
